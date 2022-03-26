@@ -1,5 +1,6 @@
 import React from "react"
-import {auth} from 'firebase/auth'
+import {auth} from "firebase/auth"
+import {Button} from "@mui/material"
 
 export default function signIn()
 {
@@ -8,6 +9,6 @@ export default function signIn()
   auth.signInWithPopup(provider)
   }
   return(
-    <button onClick={googleSignIn}> Google sign in</button>
+    <Button onClick={googleSignIn}> Google sign in</Button>
   )
 }
