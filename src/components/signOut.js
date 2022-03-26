@@ -5,10 +5,10 @@ import {Button} from "@mui/material"
 
 const auth=firebase.auth()
 
-function signOut() {
+function SignOut() {
   return auth.currentUser && (
         <Button onClick={()=>auth.signOut()}></Button>
   )
 }
 
-export default signOut
+export default SignOut
