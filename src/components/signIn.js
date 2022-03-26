@@ -1,6 +1,9 @@
 import React from "react"
-import {auth} from "firebase/auth"
+import firebase from "firebase/compat/app"
+import "firebase/compat/auth"
 import {Button} from "@mui/material"
+
+const auth=firebase.auth()
 
 export default function signIn()
 {

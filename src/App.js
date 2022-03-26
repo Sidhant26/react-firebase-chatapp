@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.css'
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import signIn from './components/signIn'
+import Chat from './components/Chat'
 
 const firebaseConfig={
   apiKey: "AIzaSyDmFgSbTGcJ2uPUJRE35pEO0suUSGSolfE",
@@ -20,9 +21,9 @@ const firebaseConfig={
 firebase.initializeApp({firebaseConfig})
 
 const auth=firebase.auth(), firestore=firebase.firestore()
-const [user]=useAuthState(auth)     //returns null if logged out, some data otherwise
 
 export default function App() {
+  const [user]=useAuthState(auth);     //returns null if logged out, some data otherwise
   return (
     <div className="App">
       <header className="App-header">
