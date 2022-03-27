@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app"
-import "firebase/compat/firestore"
+import "firebase/compat/auth"
+import "firebase/compat/firestore"        //Firebase version 9 compat
 
 const firebaseConfig={
     apiKey: "AIzaSyDmFgSbTGcJ2uPUJRE35pEO0suUSGSolfE",
@@ -11,9 +12,9 @@ const firebaseConfig={
     measurementId: "G-JPFC1BMJFP"
   }
   
-  firebase.initializeApp(firebaseConfig)
+  const fb=firebase.initializeApp(firebaseConfig)
 
-  const db=firebase.firestore()
+  const db=fb.firestore()
   const auth=firebase.auth()
 
-  export {auth}
+  export {db,auth}

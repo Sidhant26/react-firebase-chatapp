@@ -2,12 +2,11 @@ import React from "react"
 import firebase from 'firebase/compat/app'
 import "firebase/compat/auth"
 import {Button} from "@mui/material"
-
-const auth=firebase.auth()
+import {auth} from "../firebase"
 
 function SignOut() {
-  return auth.currentUser && (
-        <Button onClick={()=>auth.signOut()}></Button>
+  return(
+        <Button onClick={()=>auth.signOut()}>Sign out</Button>
   )
 }
 
