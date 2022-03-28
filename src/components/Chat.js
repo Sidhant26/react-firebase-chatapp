@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react"
 import SignOut from "./signOut"
 import {db} from "../firebase"
+import SendMessage from "./SendMessage"
 
 export default function Chat()
 {
@@ -21,6 +22,7 @@ export default function Chat()
                     </div>
                 </div>
             ))}
+            <SendMessage />
         </>
     )
 }
